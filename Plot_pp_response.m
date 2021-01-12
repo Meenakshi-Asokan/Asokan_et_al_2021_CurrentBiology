@@ -1,4 +1,4 @@
-%Plotting paired pulse response exemplar rasters with alternating colors
+%Plotting paired pulse response 
 close all
 clearvars;
 data_dir = 'F:\EPHYS\Curr Bio\Dataset\Figure_1';
@@ -29,6 +29,7 @@ for r_num = 1:num_regions
             c2 = [0.8500, 0.3250, 0.0980];
     end   
     figure();
+    %exemplar rasters with alternating colors
     for i = 1:size(raster,3)
         subplottight(size(raster,3),1,size(raster,3)-i+1);
         L = logical(raster(:,:,i));
