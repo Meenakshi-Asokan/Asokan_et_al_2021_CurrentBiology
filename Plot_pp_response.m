@@ -12,6 +12,7 @@ burst2_delays = inners; %20 values from 0 to 512 ms
 burst2_times = burst2_delays + burst1_time + burst_duration;
 %%
 num_regions = length(pp_ex);
+confusion_mat = cell(1,num_regions);
 for r_num = 1:num_regions
     raster_mat_pp = pp_ex(r_num).raster;
     raster = [];
@@ -36,7 +37,7 @@ for r_num = 1:num_regions
         if mod(i,2) == 1 
            MarkerFormat.Color =c1;
         else
-            MarkerFormat.Color = c2;
+           MarkerFormat.Color = c2;
         end
         plotSpikeRaster(L,'PlotType','scatter','MarkerFormat',MarkerFormat);
         hold on
@@ -50,5 +51,6 @@ for r_num = 1:num_regions
         set(gca,'yticklabel',[])
         end
 %         axis off; 
-    end
+    end    
+    confusion_mat{r_num} = myfunc_psth_decoder(raster);
 end
