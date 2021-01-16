@@ -1,3 +1,1 @@
-CurrentBio_2021
-
-Codes to analyse dataset from Asokan et al. 2021, Current Biology
+Codes to analyse dataset from the study by Asokan et al., "Inverted central auditory hierarchies for encoding local intervals and global temporal patterns". 
